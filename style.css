@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --base-color: #282e3b;
+  --base-color-dark: #1a1f2e;
+
+  --text-color:  #e5efef;
+
+  --nav-height: 4rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
+
+body {
+  background: var(--base-color);
+  color: var(--text-color);
+}
+
+.hidden {
+  position: fixed;
+  display: none;
+}
+
+/* Navbar */
+
+nav {
+  width: 100vw;
+  height: var(--nav-height);
+  background-color: var(--base-color-dark);
+  display: flex;
+}
+
+nav > .nav-title i,
+nav > .nav-menu i {
+  font-size: 1.5rem;
+  margin: 1.25rem;
+  cursor: pointer;
+}
+
+nav > .nav-title {
+  height: var(--nav-height);
+  width: 4.375rem;
+}
+
+nav > .nav-menu {
+  height: var(--nav-height);
+  min-width: 4.375rem;
+  float: right;
+  margin-left: auto;
+}
+
+nav > .nav-drop {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  height: 100vh;
+  width: min(350px, 100vw);
+  background-color: var(--base-color-dark);
+  transition: left .3s ease;
+  z-index: 2;
+}
+
+nav .nav-drop-primary {
+  list-style-type: none;
+}
+
+nav .nav-drop-primary li {
+  font-size: 1.5rem;
+  padding: .35rem 0 .35rem 0;
+}
+
+nav .nav-drop-primary li > i {
+  padding-right: .5rem;
+}
+
+nav .nav-drop-primary li > p {
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0;
+}
+
+#nav-drop-switch:checked + nav > .nav-drop { left: 0; }
+#nav-drop-switch:checked + nav > *:not(.nav-drop),
+#nav-drop-switch:checked + body { opacity: .5; }
