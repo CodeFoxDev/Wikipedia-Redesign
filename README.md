@@ -5,3 +5,6 @@ A redesigned ui for the mobile wikipedia site: https://en.m.wikipedia.org/wiki/M
 ### Features
 - Dark mode
 - More user-friendly ui
+
+### Color palette
+- https://lospec.com/palette-list/comfy52
